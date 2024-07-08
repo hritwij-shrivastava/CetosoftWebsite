@@ -1,0 +1,16 @@
+.dropdown-menu {
+  display: none;
+  /* opacity: 1 !important; */
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+#navbar-menu  ul.nav > li > a {
+  text-transform: capitalize !important;
+}

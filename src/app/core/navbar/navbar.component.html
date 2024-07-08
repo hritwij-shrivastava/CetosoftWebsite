@@ -1,0 +1,80 @@
+    <!-- Header 
+    ============================================= -->
+    <header id="home">
+
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default active-border navbar-sticky bootsnav">
+
+            <div class="container">
+
+                <!-- Start Atribute Navigation -->
+                <!-- <div class="attr-nav inc-border">
+                    <ul>
+                        <li class="contact">
+                            <i class="flaticon-telephone"></i> 
+                            <p>Call us today! <strong>+123 456 7890</strong></p>
+                        </li>
+                    </ul>
+                </div>         -->
+                <!-- End Atribute Navigation -->
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" >   <!-- data-out="fadeOutUp"-->
+                        <li>
+                            <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Insights</a>
+                        </li>
+                        <li class="dropdown" (mouseover)="toggleDropdown(true, 'servicesDropdown')" (mouseout)="toggleDropdown(false, 'servicesDropdown')">
+                            <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown" [class.show]="isservicesDropdownOpen">
+                                <li><a routerLink="/data-analytics" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Data &amp; Analytics</a></li>
+                                <li><a routerLink="/storage-cloud" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Storage &amp; Cloud</a></li>
+                                <li><a routerLink="/intelligent-automation" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Intelligent Automation</a></li>
+                                <li><a routerLink="/artificial-intelligence" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Artificial Intelligence</a></li>
+                                <li><a routerLink="/cyber-security" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Cyber Security</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" (mouseover)="toggleDropdown(true, 'companyDropdown')" (mouseout)="toggleDropdown(false, 'companyDropdown')">
+                            <a href="#" class="dropdown-toggle" id="companyDropdown" role="button" aria-expanded="false">About Us</a>
+                            <ul class="dropdown-menu" aria-labelledby="companyDropdown" [class.show]="iscompanyDropdownOpen">
+                                <li><a routerLink="/about-company" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">About Company</a></li>
+                                <li><a routerLink="/why-choose-us" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Why Choose us</a></li>
+                                <li><a routerLink="/meet-our-team" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Meet Our Team</a></li>
+                                <li><a routerLink="/get-in-touch" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Get in Touch</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" (mouseover)="toggleDropdown(true, 'blogDropdown')" (mouseout)="toggleDropdown(false, 'blogDropdown')">
+                            <a href="#" class="dropdown-toggle" id="blogDropdown" role="button" aria-expanded="false">News</a>
+                            <ul class="dropdown-menu" aria-labelledby="blogDropdown" [class.show]="isblogDropdownOpen">
+                                <li><a routerLink="/press-releases" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Press releases</a></li>
+                                <li><a routerLink="/corporate-social-responsibility" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Corporate Social Responsibility</a></li>
+                                <li><a routerLink="/social-media" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Social media</a></li>
+                                <li><a routerLink="/events" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Events</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a routerLink="/careers" routerLinkActive="active">Careers</a>
+                        </li>
+                        <li>
+                            <a routerLink="/contact" routerLinkActive="active">Contact</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
