@@ -67,8 +67,8 @@
               "public/assets/js/count-to.js",
               "public/assets/js/YTPlayer.min.js",
               "public/assets/js/jquery.nice-select.min.js",
-              "public/assets/js/bootsnav.js" //,
-              // "public/assets/js/main.js"
+              "public/assets/js/bootsnav.js",
+              "public/assets/js/main.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,

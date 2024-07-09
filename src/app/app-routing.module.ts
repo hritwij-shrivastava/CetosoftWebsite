@@ -13,6 +13,13 @@ const routes: Routes = [
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'insights',
+    loadChildren: () =>
+      import('./modules/insights/insights.module').then(
+        (m) => m.InsightsModule
+      ),
+  },
+  {
     path: 'data-analytics',
     loadChildren: () =>
       import('./modules/services/data-analytics/data-analytics.module').then(

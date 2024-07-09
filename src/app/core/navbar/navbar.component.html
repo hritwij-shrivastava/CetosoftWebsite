@@ -23,7 +23,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class="navbar-brand">
                         <img src="assets/img/logo.png" class="logo" alt="Logo">
                     </a>
                 </div>
@@ -33,34 +33,34 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" >   <!-- data-out="fadeOutUp"-->
                         <li>
-                            <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Insights</a>
+                            <a routerLink="/insights" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Insights</a>
                         </li>
                         <li class="dropdown" (mouseover)="toggleDropdown(true, 'servicesDropdown')" (mouseout)="toggleDropdown(false, 'servicesDropdown')">
-                            <a href="#" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" aria-expanded="false">Services</a>
+                            <a routerLink="/" [class.active]="isservicesLinkOpen" class="nav-link dropdown-toggle" id="servicesDropdown" role="button" aria-expanded="false">Services</a>
                             <ul class="dropdown-menu" aria-labelledby="servicesDropdown" [class.show]="isservicesDropdownOpen">
-                                <li><a routerLink="/data-analytics" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Data &amp; Analytics</a></li>
-                                <li><a routerLink="/storage-cloud" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Storage &amp; Cloud</a></li>
-                                <li><a routerLink="/intelligent-automation" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Intelligent Automation</a></li>
-                                <li><a routerLink="/artificial-intelligence" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Artificial Intelligence</a></li>
-                                <li><a routerLink="/cyber-security" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Cyber Security</a></li>
+                                <li><a routerLink="/data-analytics" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Data &amp; Analytics</a></li>
+                                <li><a routerLink="/storage-cloud" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Storage &amp; Cloud</a></li>
+                                <li><a routerLink="/intelligent-automation" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Intelligent Automation</a></li>
+                                <li><a routerLink="/artificial-intelligence" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Artificial Intelligence</a></li>
+                                <li><a routerLink="/cyber-security" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Cyber Security</a></li>
                             </ul>
                         </li>
                         <li class="dropdown" (mouseover)="toggleDropdown(true, 'companyDropdown')" (mouseout)="toggleDropdown(false, 'companyDropdown')">
-                            <a href="#" class="dropdown-toggle" id="companyDropdown" role="button" aria-expanded="false">About Us</a>
+                            <a routerLink="/" [class.active]="iscompanyLinkOpen" class="dropdown-toggle" id="companyDropdown" role="button" aria-expanded="false">About Us</a>
                             <ul class="dropdown-menu" aria-labelledby="companyDropdown" [class.show]="iscompanyDropdownOpen">
-                                <li><a routerLink="/about-company" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">About Company</a></li>
-                                <li><a routerLink="/why-choose-us" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Why Choose us</a></li>
-                                <li><a routerLink="/meet-our-team" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Meet Our Team</a></li>
-                                <li><a routerLink="/get-in-touch" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Get in Touch</a></li>
+                                <li><a routerLink="/about-company" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">About Company</a></li>
+                                <li><a routerLink="/why-choose-us" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Why Choose us</a></li>
+                                <li><a routerLink="/meet-our-team" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Meet Our Team</a></li>
+                                <li><a routerLink="/get-in-touch" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Get in Touch</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown" (mouseover)="toggleDropdown(true, 'blogDropdown')" (mouseout)="toggleDropdown(false, 'blogDropdown')">
-                            <a href="#" class="dropdown-toggle" id="blogDropdown" role="button" aria-expanded="false">News</a>
-                            <ul class="dropdown-menu" aria-labelledby="blogDropdown" [class.show]="isblogDropdownOpen">
-                                <li><a routerLink="/press-releases" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Press releases</a></li>
-                                <li><a routerLink="/corporate-social-responsibility" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Corporate Social Responsibility</a></li>
-                                <li><a routerLink="/social-media" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Social media</a></li>
-                                <li><a routerLink="/events" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle active">Events</a></li>
+                        <li class="dropdown" (mouseover)="toggleDropdown(true, 'newsDropdown')" (mouseout)="toggleDropdown(false, 'newsDropdown')">
+                            <a routerLink="/" [class.active]="isnewsLinkOpen" class="dropdown-toggle" id="newsDropdown" role="button" aria-expanded="false">News</a>
+                            <ul class="dropdown-menu" aria-labelledby="newsDropdown" [class.show]="isnewsDropdownOpen">
+                                <li><a routerLink="/press-releases" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Press releases</a></li>
+                                <li><a routerLink="/corporate-social-responsibility" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Corporate Social Responsibility</a></li>
+                                <li><a routerLink="/social-media" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Social media</a></li>
+                                <li><a routerLink="/events" routerLinkActive="active" ariaCurrentWhenActive="page" class="dropdown-toggle">Events</a></li>
                             </ul>
                         </li>
                         <li>
