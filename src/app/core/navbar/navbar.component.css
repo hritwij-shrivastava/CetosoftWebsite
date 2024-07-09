@@ -1,5 +1,12 @@
+.dropdown {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
 .dropdown-menu {
   display: none;
+  -webkit-transition: none !important;
+  transition: none !important;
   /* opacity: 1 !important; */
 }
 

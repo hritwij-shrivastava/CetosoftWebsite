@@ -147,6 +147,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/contact/contact.module').then((m) => m.ContactModule),
   },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./modules/error-page/error-page.module').then(
+        (m) => m.ErrorPageModule),
+  },
 ];
 
 @NgModule({
