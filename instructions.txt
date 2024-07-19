@@ -1,0 +1,9 @@
+npm install bootstrap
+npm install jquery
+ng add @angular/material
+ng add @ng-bootstrap/ng-bootstrap
+npm install @iplab/ngx-file-upload --save
+
+
+ng g c core/navbar
+ng g c modules/home

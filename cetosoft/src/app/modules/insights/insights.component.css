@@ -1,0 +1,20 @@
+.insights-padding{
+    padding: 120px 50px;
+}
+
+#submit-insights {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #898a8d;
+    border-radius: 0;
+    padding: 0.5rem 2rem 0.5rem 0px;
+    /* height: 3.5rem; */
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    letter-spacing: .5px;
+}
+
+.insights-img {
+    min-height: 350px;
+}

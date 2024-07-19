@@ -1,0 +1,274 @@
+ng new cetosoft --no-standalone
+ng add @angular/material
+
+ng g c shared/navbar
+ng g c shared/footer
+
+ng g c modules/home
+
+ng g c modules/faq 
+ng g c modules/error-page 
+
+ng g c modules/blog 
+ng g c modules/blog-single
+
+ng g c modules/insights
+
+ng g c modules/services
+ng g c modules/services/data-analytics
+ng g c modules/services/storage-cloud
+ng g c modules/services/intelligent-automation
+ng g c modules/services/artificial-intelligence
+ng g c modules/services/cyber-security
+
+
+ng g c modules/about-us
+ng g c modules/about-us/about-company
+ng g c modules/about-us/why-choose-us
+ng g c modules/about-us/meet-our-team
+ng g c modules/about-us/team-details
+
+ng g c modules/news
+ng g c modules/news/press-releases
+ng g c modules/news/corporate-social-responsibility
+ng g c modules/news/social-media
+ng g c modules/news/events
+ng g c modules/news/explore
+
+ng g c modules/careers
+ng g c modules/contact
+
+copy assets to public
+update angular json
+                "styles": [
+              "src/styles.css",
+              "public/assets/css/animate.css",
+              "public/assets/css/bootstrap.min.css",
+              "public/assets/css/font-awesome.min.css",
+              "public/assets/css/themify-icons.css",
+              "public/assets/css/flaticon-set.css",
+              "public/assets/css/magnific-popup.css",
+              "public/assets/css/owl.carousel.min.css",
+              "public/assets/css/owl.theme.default.min.css",
+              "public/assets/css/animate.css",
+              "public/assets/css/bootsnav.css",
+              "public/assets/css/style.css",
+              "public/assets/css/responsive.css"
+            ],
+            "scripts": [
+              "public/assets/js/jquery-1.12.4.min.js",
+              "public/assets/js/popper.min.js",
+              "public/assets/js/bootstrap.min.js",
+              "public/assets/js/equal-height.min.js",
+              "public/assets/js/jquery.appear.js",
+              "public/assets/js/jquery.easing.min.js",
+              "public/assets/js/jquery.magnific-popup.min.js",
+              "public/assets/js/modernizr.custom.13711.js",
+              "public/assets/js/owl.carousel.min.js",
+              "public/assets/js/wow.min.js",
+              "public/assets/js/progress-bar.min.js",
+              "public/assets/js/isotope.pkgd.min.js",
+              "public/assets/js/imagesloaded.pkgd.min.js",
+              "public/assets/js/count-to.js",
+              "public/assets/js/YTPlayer.min.js",
+              "public/assets/js/jquery.nice-select.min.js",
+              "public/assets/js/bootsnav.js",
+              "public/assets/js/main.js"
+            ],
+
+update index.html
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- ========== Meta Tags ========== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tanda - IT Solutions Template">
+
+  <!-- ========== Page Title ========== -->
+  <title>Cetosoft</title>
+  <base href="/">
+
+  <!-- ========== Favicon Icon ========== -->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+  <!-- ========== Start Stylesheet ========== -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/css/themify-icons.css" rel="stylesheet" />
+  <link href="assets/css/flaticon-set.css" rel="stylesheet" />
+  <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+  <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+  <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+  <link href="assets/css/animate.css" rel="stylesheet" />
+  <link href="assets/css/bootsnav.css" rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet" />
+  <!-- ========== End Stylesheet ========== -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+</head>
+
+<body class="mat-typography">
+  <app-root></app-root>
+</body>
+
+</html>
+
+
+add below in app-component.ts 
+ 
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'cetosoft';
+}
+
+
+add below in add.component.html
+
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+
+add below in add.component.modules
+import { NgModule } from '@angular/core';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { NavbarComponent } from './core/navbar/navbar.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    NavbarComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [
+    provideClientHydration()
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'about-company',
+    loadChildren: () =>
+      import('./modules/about-company/about-company.module').then(
+        (m) => m.AboutCompanyModule
+      ),
+  },
+  {
+    path: 'our-team',
+    loadChildren: () =>
+      import('./modules/our-team/our-team.module').then((m) => m.OurTeamModule),
+  },
+  {
+    path: 'choose-us',
+    loadChildren: () =>
+      import('./modules/choose-us/choose-us.module').then(
+        (m) => m.ChooseUsModule
+      ),
+  },
+  {
+    path: 'team',
+    loadChildren: () =>
+      import('./modules/team/team.module').then((m) => m.TeamModule),
+  },
+  {
+    path: 'get-in-touch',
+    loadChildren: () =>
+      import('./modules/get-in-touch/get-in-touch.module').then(
+        (m) => m.GetInTouchModule
+      ),
+  },
+  {
+    path: 'faq',
+    loadChildren: () =>
+      import('./modules/faq/faq.module').then((m) => m.FaqModule),
+  },
+  {
+    path: 'error-page',
+    loadChildren: () =>
+      import('./modules/error-page/error-page.module').then(
+        (m) => m.ErrorPageModule
+      ),
+  },
+  {
+    path: 'services',
+    loadChildren: () =>
+      import('./modules/services/services.module').then(
+        (m) => m.ServicesModule
+      ),
+  },
+  {
+    path: 'case-studies',
+    loadChildren: () =>
+      import('./modules/case-studies/case-studies.module').then(
+        (m) => m.CaseStudiesModule
+      ),
+  },
+  {
+    path: 'case-details',
+    loadChildren: () =>
+      import('./modules/case-details/case-details.module').then(
+        (m) => m.CaseDetailsModule
+      ),
+  },
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./modules/blog/blog.module').then((m) => m.BlogModule),
+  },
+  {
+    path: 'blog-single',
+    loadChildren: () =>
+      import('./modules/blog-single/blog-single.module').then(
+        (m) => m.BlogSingleModule
+      ),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./modules/contact/contact.module').then((m) => m.ContactModule),
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

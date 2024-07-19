@@ -1,0 +1,13 @@
+npm create sanity@latest -- --coupon codewithharry
+
+    ? Use the default dataset configuration? Yes
+    ? Project output path: D:\Company\Website\cetosoft\test-1\backend\cetosoft
+    ? Select project template Blog (schema)
+    ? Do you want to use TypeScript? Yes
+    ? Package manager to use for installing dependencies? npm
+
+
+npm start
+
+connect to angular
+https://www.sanity.io/guides/create-a-single-page-application-with-angular-and-sanity

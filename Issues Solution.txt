@@ -1,0 +1,27 @@
+Issue - 1 - [Violation] Added non-passive event listener to a scroll-blocking 'touchstart' event. Consider marking event handler as 'passive' to make the page more responsive
+
+    ref-https://stackoverflow.com/questions/39152877/consider-marking-event-handler-as-passive-to-make-the-page-more-responsive
+    
+    sol-The following library resolved the issue. Simply add this code to your project.
+
+        <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
+
+        
+Issue - 2 - unable to preventDefault inside passive event listener invocation.
+    
+    ref-https://stackoverflow.com/questions/42101723/unable-to-preventdefault-inside-passive-event-listener
+
+    sol - See this blog post. If you call preventDefault on every touchstart then you should also have a CSS rule to disable touch scrolling like
+
+            .sortable-handler {
+                touch-action: none;
+                }
+
+
+Issue - 3 - aws windows ec2 network discovery not turning on
+
+https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/cannot-turn-on-network-discovery
+
+
+Issue - 4 - angular router send to top of page after route change
+https://stackoverflow.com/questions/62324385/angular-9-scroll-to-top-on-route-every-change

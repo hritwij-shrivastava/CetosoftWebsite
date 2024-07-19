@@ -1,0 +1,13 @@
+ref-https://www.sanity.io/guides/create-a-single-page-application-with-angular-and-sanity
+
+npm install @sanity/client @sanity/image-url
+
+ng generate service service/sanity
+
+
+// tsconfig.json
+
+"compilerOptions": {
+    "allowSyntheticDefaultImports":true,
+    ...
+  },
