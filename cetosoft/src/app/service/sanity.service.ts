@@ -9,9 +9,16 @@ import { Blog } from './blog';
 })
 export class SanityService {
   constructor() { }
+  
+  // sanityClientCredentials = {
+  //   option: createClient({
+  //     projectId: "your-api-key",
+  //     dataset: "production"
+  //   })
+  // }
 
   sanityClientCredentials = createClient({
-    projectId: 'your-prroject-id',
+    projectId: 'your-api-key',
     dataset: 'production',
     useCdn: true, // set to `false` to bypass the edge cache
     apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
@@ -23,6 +30,11 @@ export class SanityService {
   async getBlogs(): Promise<Blog[]> {
     return await this.sanityClientCredentials.fetch(
       `*[_type == "post"]`
+    );
+  }
+  async getPressReleases(){
+    return await this.sanityClientCredentials.fetch(
+      `*[_type == "pressReleases"]`
     );
   }
 }
